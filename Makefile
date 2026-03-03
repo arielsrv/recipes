@@ -34,4 +34,4 @@ generate:
 ## mod-upgrade: ⬆️ Upgrade Go dependencies in every module recursively
 .PHONY: mod-upgrade
 mod-upgrade:
-	@find . \( -name .git -o -name vendor -o -name node_modules \) -prune -o -name go.mod -exec sh -c 'dir="$$(dirname "$$1")"; echo "→ go-mod-upgrade en $$dir"; (cd "$$dir" && go run github.com/oligot/go-mod-upgrade@latest)' _ {} \;
+	@find . \( -name .git -o -name vendor -o -name node_modules \) -prune -o -name go.mod -exec sh -c 'dir="$$(dirname "$$1")"; echo "→ go-mod-upgrade en $$dir"; (cd "$$dir" && go run github.com/oligot/go-mod-upgrade@latest --force)' _ {} \;
