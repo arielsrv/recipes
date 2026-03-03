@@ -1,6 +1,6 @@
 module example.com/GofiberFirebaseBoilerplate
 
-go 1.25.0
+go 1.26.0
 
 require (
 	cloud.google.com/go/firestore v1.21.0

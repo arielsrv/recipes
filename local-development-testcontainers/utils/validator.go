@@ -13,8 +13,7 @@ var validate = validator.New()
 func Validate(payload interface{}) *fiber.Error {
 	err := validate.Struct(payload)
 	if err != nil {
-		var targetErr *fiber.Error
-		if errors.As(err, &targetErr) {
+		if targetErr, ok := errors.AsType[*fiber.Error](err); ok {
 			return &fiber.Error{
 				Code:    fiber.StatusBadRequest,
 				Message: targetErr.Error(),

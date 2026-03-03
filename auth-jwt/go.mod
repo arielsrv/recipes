@@ -1,6 +1,6 @@
 module auth-jwt-gorm
 
-go 1.25.0
+go 1.26.0
 
 require (
 	github.com/gofiber/contrib/v3/jwt v1.1.0
